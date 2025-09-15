@@ -1,21 +1,21 @@
 package tech.crm.infra.persistence.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.util.UUID;
 
-@Entity(name = "user")
+@Entity(name = "users")
 public class UserEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private UUID id = UUID.randomUUID();
     private String username;
     private String name;
     private String email;
     private String password;
+
+    public UserEntity() {
+    }
 
     public UserEntity(UUID id, String username, String name, String email, String password) {
         this.id = id;
