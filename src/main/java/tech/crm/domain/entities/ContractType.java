@@ -1,15 +1,18 @@
 package tech.crm.domain.entities;
 
+import java.util.List;
 import java.util.UUID;
 
 public class ContractType {
 
     private UUID id;
     private String name;
+    private List<Contract> contract;
 
-    public ContractType(UUID id, String name) {
+    public ContractType(UUID id, String name, List<Contract> contract) {
         this.id = id;
         this.name = name;
+        this.contract = contract;
     }
 
     public UUID getId() {
@@ -26,5 +29,13 @@ public class ContractType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Contract> getContract() {
+        return contract;
+    }
+
+    public void setContract(List<Contract> contract) {
+        this.contract = contract;
     }
 }
