@@ -1,6 +1,5 @@
 package tech.crm.infra.adapter;
 
-import io.quarkus.panache.common.Page;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import java.util.List;
@@ -21,9 +20,8 @@ public class UserRepositoryGateway implements UserGateway {
     }
 
     @Override
-    public List<User> findAll(FilterUserRequest filterUserRequest) {
+    public List<User> findAll(FilterUserRequest userRequest) {
         return userRepository.findAll()
-            .page(Page.of(filterUserRequest.getPage(), filterUserRequest.getSize()))
             .stream()
             .map(UserMapper::toDomain)
             .toList();

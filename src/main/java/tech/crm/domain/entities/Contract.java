@@ -6,12 +6,14 @@ public class Contract {
 
     private UUID id;
     private ContractType contractType;
+    private Bank bank;
     private double coefficient;
 
-    public Contract(UUID id, ContractType contractType, double coefficient) {
+    public Contract(UUID id, ContractType contractType, double coefficient, Bank bank) {
         this.id = id;
         this.contractType = contractType;
         this.coefficient = coefficient;
+        this.bank = bank;
     }
 
     public UUID getId() {
@@ -36,6 +38,14 @@ public class Contract {
 
     public void setCoefficient(double coefficient) {
         this.coefficient = coefficient;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
     }
 
 }

@@ -18,6 +18,15 @@ public class BankEntity {
     public BankEntity() {
     }
 
+    public BankEntity(String name) {
+        this.name = name;
+    }
+
+    public BankEntity(String name, List<ContractEntity> contracts) {
+        this.name = name;
+        this.contracts = contracts;
+    }
+
     public BankEntity(UUID id, String name, List<ContractEntity> contracts) {
         this.id = id;
         this.name = name;

@@ -2,21 +2,24 @@ package tech.crm.domain.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
-import tech.crm.application.requests.user.FilterUserRequest;
-import tech.crm.domain.entities.User;
-import tech.crm.domain.gateway.UserGateway;
+import tech.crm.domain.entities.Bank;
+import tech.crm.domain.gateway.BankGateway;
 
 @ApplicationScoped
 public class BankService {
 
-    private final UserGateway userGateway;
+    private final BankGateway bankGateway;
 
-    public BankService(UserGateway userGateway) {
-        this.userGateway = userGateway;
+    public BankService(BankGateway bankGateway) {
+        this.bankGateway = bankGateway;
     }
 
-    public List<User> findAll(FilterUserRequest userRequest) {
-        return userGateway.findAll(userRequest);
+    public List<Bank> findAll() {
+        return bankGateway.findAll();
+    }
+
+    public void save(Bank bank) {
+        bankGateway.save(bank);
     }
 
 }
